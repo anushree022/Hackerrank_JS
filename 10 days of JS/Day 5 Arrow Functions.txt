@@ -1,0 +1,12 @@
+function modifyArray(nums) {
+ nums = nums.map((n)=>(n%2==0 ? 2:3)*n)  ;
+ return nums;  
+}
+
+
+function main() {
+    const n = +(readLine());
+    const a = readLine().split(' ').map(Number);
+    
+    console.log(modifyArray(a).toString().split(',').join(' '));
+}

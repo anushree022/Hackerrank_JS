@@ -1,0 +1,19 @@
+function getSecondLargest(nums) {
+    // Complete the function
+    var sorted_array= nums.sort(function(a,b){return a-b});
+    var second_largest= sorted_array.filter(function(elem,index,self)
+    {
+        return index== self.indexOf(elem); 
+    })
+    
+    
+    return second_largest[second_largest.length-2];
+}
+
+
+function main() {
+    const n = +(readLine());
+    const nums = readLine().split(' ').map(Number);
+    
+    console.log(getSecondLargest(nums));
+}

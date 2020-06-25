@@ -1,0 +1,26 @@
+function getMaxLessThanK(n, k)
+{
+    var maxi = -1;
+    for(var i=0;i<=n;i++)
+    {
+        for(var j=i+1;j<=n;j++)
+        {
+            var res=i & j;
+            if(res>maxi && res<k)
+            {
+                maxi=res;
+            }
+        }
+    }
+    return maxi;
+}
+
+function main() {
+    const q = +(readLine());
+    
+    for (let i = 0; i < q; i++) {
+        const [n, k] = readLine().split(' ').map(Number);
+        
+        console.log(getMaxLessThanK(n, k));
+    }
+}
